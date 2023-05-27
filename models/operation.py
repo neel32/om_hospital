@@ -1,14 +1,13 @@
-from odoo import api, fields, models
-
-
-# access.hospital.operation,access_hospital_operation,om_hospital.model_hospital_operation,base.group_user,1,1,1,1
+from odoo import models, fields, api
 
 class HospitalOperation(models.model):
-    _name = "hospital.operation"
+    _name = 'hospital.operation'
     _description = "Hospital Operation"
     _log_access = False
     _order = "sequence" 
 
+# access.hospital.operation,access_hospital_operation,om_hospital.model_hospital_operation,base.group_user,1,1,1,1
+    
     doctor_id = fields.Many2one('res.users', string='Doctor')
     operation_name = fields._String('Name')
     reference_reccord = fields.Reference(selection=[('hospital.patient','Patient'),
