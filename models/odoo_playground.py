@@ -26,9 +26,17 @@ class OdooPlayGround(models.Model):
     # search = self.env['hospital.patient'].search([('gender','=','female'),('id','=',6)])
     # search = self.env['hospital.patient'].search([], limit=50, order='id desc, name')
     # browse = self.env['hospital.patient'].browse(72).exist()
+    # browse = self.env['hospital.patient'].browse(72)
+    # browse.copy() -- copy method
+    # browse.unlink() -- unlink method
     # unlink = self.env['hospital.patient'].browse(72.'id').unlink()
     # write = self.env['hospital.patient'].browse(72).write('name':'om','email':'dummay@gmail.com')
     # create = self.env['hospital.patient'].create({'name':'om','email':'dummay@gmail.com'})
+    # ref = self.env.ref('om_hospital.patient_xyz')
+    # print("Alexander", ref)
+    # partners = self.env['res.parents'].search([])
+    # print("partner..", partner.mapped('email')) -- mapped operation
+
 
     def action_execute(self):
         try:

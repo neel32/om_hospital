@@ -18,6 +18,7 @@
         'views/female_patient.xml',
         'views/male_patient.xml',
         'views/appointment.xml',
+        'views/template.xml',
         'views/patient_tag_view.xml',
         'views/odoo_playground.xml',
         # 'views/res_config_settings_view.xml',
