@@ -5,4 +5,3 @@ access.appointment.pharmacy.lines,access_appointment_pharmacy_lines,om_hospital.
 access.patient.tag,access_patient_tag,om_hospital.model_patient_tag,base.group_user,1,1,1,1
 access.cancle.appointment.wizard,access_cancle_appointment_wizard,om_hospital.model_cancle_appointment_wizard,base.group_user,1,1,1,1
 access.odoo.playground,access_odoo_playground,om_hospital.model_odoo_playground,base.group_user,1,1,1,1
-

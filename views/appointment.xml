@@ -76,8 +76,8 @@
                 <field name="gender" optional="show"/>
                 <field name="appointment_time" optional="show"/>
                 <field name="booking_date" optional="hide"/>
-                <field name="activity_ids" widget="list_activity"/>
-                <field name="state" 
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="state"
                   decoration-success="state == 'done'"
                   decoration-info="state == 'draft'"
                   decoration-danger="state == 'cancle'"
@@ -108,7 +108,7 @@
       <button name="action_done" string="Mark as Done" class="on_highlight" data-hotkey="d" type="object" states="in_consultation"/>
       <button name="action_share_whatsapp" string="Share In Whatsapp" class="on_highlight" data-hotkey="w" icon="fa-whatsapp" type="object"/>
       <button name="%(om_hospital.action_cancle_appointment)d" string="cancle" 
-      context="{'default_appointment_id' : active_id, 'hide_appointment' : 1}" data-hotkey="c" type="action" states="draft,in_consultation,cancle"/>
+      context="{'default_appointment_id' : active_id, 'hide_appointment' : 1}" data-hotkey="c" type="action" states="draft,in_consultation"/>
       <!-- <button name="action_cancle" string="cancle" data-hotkey="c" type="object" states="draft,in_consultation"/> -->
       <button name="action_draft" string="Reset to Draft" data-hotkey="r" type="object" states="cancle"/>
       <!-- options="{'clickable':'1'}" -->

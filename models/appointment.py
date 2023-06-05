@@ -17,8 +17,8 @@ class HospitalAppointment(models.Model):
     _rec_name="ref"
     _order = "ref"
 
-    name = fields.Char(string='Appointment ID', required=True, copy=False, readonly=True,
-                       index=True, default=lambda self: _('New'))
+    # name = fields.Char(string='Appointment ID', required=False, copy=False, readonly=True,
+    #                    index=True, default=lambda self: _('New'))
     patient_id = fields.Many2one(comodel_name='hospital.patient', string="Patient", ondelete='cascade', trim=True) #ondelete='restrict' not delete Patient before delete a appointment 
     gender = fields.Selection(related='patient_id.gender')                                              #ondelete='cascade' will delete Patient and also delete a appointment     
     appointment_time = fields.Datetime(string='Appointment Time', default=fields.Datetime.now)
@@ -56,16 +56,16 @@ class HospitalAppointment(models.Model):
             appointment.amount_total = amount_total
 
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment')
-        res = super(HospitalAppointment, self). create(vals)
+    # @api.model
+    # def create(self, vals):
+    #     vals['name'] = self.env['ir.sequence'].next_by_code('hospital.appointment')
+    #     res = super(HospitalAppointment, self). create(vals)
     
-        sl_no = 0
-        for line in res.pharmacy_lines_ids:
-            sl_no += 1
-            line.sl_no = sl_no
-        return res
+    #     sl_no = 0
+    #     for line in res.pharmacy_lines_ids:
+    #         sl_no += 1
+    #         line.sl_no = sl_no
+    #     return res
     
     def write(self, values):
         res = super(HospitalAppointment, self).write(values)
